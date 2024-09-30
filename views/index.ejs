@@ -17,9 +17,14 @@
 </head>
 
 <body class="custom-bg">
+   <div class="container mw-75 d-flex justify-content-center p-5">
+      <div class="mw-50 bg-white mx-auto pt-2 pb-2 pl-5 pr-5" style="border-radius: 15px; border-color:aquamarine; border-width: thick;  border-style: solid;">
+         <h1 style="font-style: italic; font-family: cursive; color:aquamarine;">Drink Up</h1>
+      </div>
+   </div>
    <div class="container mw-100 d-flex justify-content-center p-5">
-      <div class="container mw-75 d-flex justify-content-around p-5">
-         <form action="/search" class="row bg-white mw-75" style="border-radius: 15px;">
+      <div class="container mw-75 d-flex justify-content-around p-2 bg-white" style="border-radius: 15px; border-color:aquamarine; border-width: thick;  border-style: solid;">
+         <form action="/search" class="row bg-white mw-75">
             <div class="form-group col-sm-12">
                <label for="drinkName" class=""><h4>Search for a drink:</h4></label>
                <input class="form-control" type="text" name="drinkName">
@@ -30,7 +35,7 @@
             </div>
          </form>
 
-         <form action="/suprise" class="row bg-white" style="border-radius: 15px;">
+         <form action="/suprise" class="row bg-white mw-25">
             <div class="form-group align-self-center p-4">
                <button class="btn btn-warning form-control align-self-center" type="submit" value="suprise">Surprise Me!</button>
             </div>
@@ -43,7 +48,7 @@
          <% if (drinks && drinks.length > 0) { %>
             <% drinks.forEach((drink, index) => { %>
                <div class="col-md-6 mb-4 d-flex justify-content-center p-2">
-                  <div class="card" style="width: 18rem;">
+                  <div class="card" style="width: 18rem; border-radius: 15px; border-color:aquamarine; border-width: thick;  border-style: solid;">
                      <img class="card-img-top img-fluid" src="<%= drink.strDrinkThumb %>" alt="<%= drink.strDrink %>">
                      <div class="card-body">
                         <h5 class="card-title"><%= drink.strDrink %></h5>
@@ -76,6 +81,6 @@
    </div>
 
    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>

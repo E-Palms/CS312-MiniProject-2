@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
         .custom-bg {
-            background-color: rgb(240, 226, 209);
+            background-color: blanchedalmond;
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
@@ -34,7 +34,9 @@
                         <input class="form-control  col-10" type="text" name="drinkName">
                     </div>
                 </div>
-                <div class="col-8"></div>
+                <div class="col-8">
+
+                </div>
                 <div class="form-group col-4">
                     <button class="btn btn-primary form-control" type="search" value="search">Search</button>
                 </div>
@@ -54,7 +56,7 @@
     <div class="container">
         <div class="row d-flex justify-content-center">
             <% if (drinks && drinks.length > 0) { %>
-                <% drinks.forEach((drink, index) => { %>
+                <% drinks.forEach((drink, drinkIndex) => { %>
                     <div class="col-md-4 d-flex justify-content-center pt-4">
                         <div class="card" style="width: 18rem; border-radius: 15px; border-color: aquamarine; border-width: thick; border-style: solid;">
                             <img class="card-img-top img-fluid" src="<%= drink.strDrinkThumb %>" alt="<%= drink.strDrink %>">
@@ -63,9 +65,9 @@
                                 <p class="card-text">
                                     Ingredients:
                                     <ul>
-                                        <% for (let i = 1; i <= 15; i++) { %>
-                                            <% if (drink[`strIngredient${i}`]) { %>
-                                                <li><%= drink[`strMeasure${i}`] %> <%= drink[`strIngredient${i}`] %></li>
+                                        <% for (let ingIdx = 1; ingIdx <= 15; ingIdx++) { %>
+                                            <% if (drink[`strIngredient${ingIdx}`]) { %>
+                                                <li><%= drink[`strMeasure${ingIdx}`] %> <%= drink[`strIngredient${ingIdx}`] %></li>
                                             <% } %>
                                         <% } %>
                                     </ul>
@@ -73,7 +75,7 @@
                             </div>
                         </div>
                     </div>
-                    <% if ((index + 1) % 3 === 0) { %>
+                    <% if ((drinkIndex + 1) % 3 === 0) { %>
                         </div><div class="row d-flex justify-content-center">
                     <% } %>
                 <% }); %>
